@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Produto>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h4 class="bg-primary text-center p-1 text-white">@ViewBag.Message</h4>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Preço</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var produto in Model)
+        {
+            <tr>
+                <td>@produto.Id</td>
+                <td>@produto.Nome</td>
+                <td>@produto.Categoria</td>
+                <td>@produto.Preco.ToString("F2")</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
